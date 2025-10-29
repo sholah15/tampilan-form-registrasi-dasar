@@ -104,6 +104,7 @@ label {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"] {
   background: var(--glass);
@@ -115,6 +116,19 @@ input[type="password"] {
   outline: none;
   transition: box-shadow 0.15s, border-color 0.12s;
   backdrop-filter: blur(6px);
+}
+
+
+/* ===== Input number ===== */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input:focus {

@@ -2,12 +2,14 @@
 const form = document.getElementById('regForm');
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
+const nilaiAngkaInput = document.getElementById('nilaiAngka');
+const nilaiHurufInput = document.getElementById('nilaiHuruf');
 const emailInput = document.getElementById('email');
 const pwdInput = document.getElementById('password');
 const toggle = document.getElementById('togglePwd');
 const fillDemo = document.getElementById('fillDemo');
 const strengthBar = document.getElementById('strengthBar');
-const logNameBtn = document.getElementById('logNameBtn');
+const logDataBtn = document.getElementById('logDataBtn');
 
 // Helper Functions
 function validEmail(e) {
@@ -44,6 +46,8 @@ toggle.addEventListener('click', () => {
 fillDemo.addEventListener('click', () => {
   firstNameInput.value = 'Budi';
   lastNameInput.value = 'Santoso';
+  nilaiAngkaInput.value = 85;
+  nilaiHurufInput.value = 'B+'
   emailInput.value = 'budi@example.com';
   pwdInput.value = 'Str0ng!Pass12';
   updateStrength();
@@ -124,10 +128,12 @@ toggle.addEventListener('keydown', (ev) => {
   }
 });
 
-// Log Nama Lengkap Button
-logNameBtn.addEventListener('click', () => {
+// Log Data Lengkap Button
+logDataBtn.addEventListener('click', () => {
   const firstName = firstNameInput.value.trim();
   const lastName = lastNameInput.value.trim();
+  const nilaiAngka = nilaiAngkaInput.value.trim();
+  const nilaiHuruf = nilaiHurufInput.value.trim();
 
   if (!firstName && !lastName) {
     console.log('Nama Lengkap : (belum diisi)');
@@ -136,5 +142,12 @@ logNameBtn.addEventListener('click', () => {
   }
 
   console.log(`Nama Lengkap : ${firstName} ${lastName}`);
-  alert(`Nama Lengkap : ${firstName} ${lastName}`);
+  console.log(`Nilai Angka : ${nilaiAngka || '(belum diisi)'}`);
+  console.log(`Nilai Huruf : ${nilaiHuruf || '(belum diisi)'}`);
+
+  alert(
+    `Nama Lengkap : ${firstName} ${lastName}\n` +
+    `Nilai Angka : ${nilaiAngka || '(belum diisi)'}\n` +
+    `Nilai Huruf : ${nilaiHuruf || '(belum diisi)'}`
+  );
 });

@@ -4,11 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Form Registrasi — IniTugas</title>
+
+  <!-- Font & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="card" role="region" aria-label="Form registrasi modern">
+    <!-- HERO SECTION -->
     <div class="hero">
       <div class="logo">
         <div class="brand-mark">IT</div>
@@ -19,7 +22,10 @@
       </div>
 
       <h1>Daftar akun baru</h1>
-      <p class="lead">Buat akun untuk mengakses fitur premium. Kami menjaga keamanan data Anda dengan enkripsi modern dan validasi yang jelas.</p>
+      <p class="lead">
+        Buat akun untuk mengakses fitur premium. Kami menjaga keamanan data Anda
+        dengan enkripsi modern dan validasi yang jelas.
+      </p>
 
       <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
         <div class="pill">Keamanan tingkat lanjut</div>
@@ -27,14 +33,29 @@
         <div class="pill">Akses cepat</div>
       </div>
 
-      <div style="margin-top:auto;font-size:13px;color:var(--muted)">Butuh bantuan? Hubungi <strong>support@example.com</strong></div>
+      <div style="margin-top:auto;font-size:13px;color:var(--muted)">
+        Butuh bantuan? Hubungi <strong>support@example.com</strong>
+      </div>
     </div>
 
+    <!-- FORM SECTION -->
     <form id="regForm" novalidate>
+      <div class="field-row">
+        <div class="field">
+          <label for="firstName">Nama Depan</label>
+          <input id="firstName" name="first_name" type="text" placeholder="Contoh: Budi" autocomplete="given-name" required />
+          <div class="help" id="firstNameHelp"></div>
+        </div>
+
+        <div class="field">
+          <label for="lastName">Nama Belakang</label>
+          <input id="lastName" name="last_name" type="text" placeholder="Contoh: Santoso" autocomplete="family-name" required />
+          <div class="help" id="lastNameHelp"></div>
+        </div>
+      </div>
+
       <div class="field">
-        <label for="name">Nama lengkap</label>
-        <input id="name" name="name" type="text" placeholder="Contoh: Budi Santoso" autocomplete="name" required />
-        <div class="help" id="nameHelp"></div>
+        <button type="button" class="btn" id="logNameBtn">Nama Lengkap</button>
       </div>
 
       <div class="field">
@@ -53,15 +74,21 @@
         <div class="strength" aria-hidden="true"><i id="strengthBar"></i></div>
       </div>
 
+      <div class="note">
+        Dengan mendaftar, Anda menyetujui
+        <a href="#" style="color:inherit;text-decoration:underline">Syarat & Ketentuan</a>.
+      </div>
+
       <div class="meta">
-        <div class="note">Dengan mendaftar, Anda menyetujui <a href="#" style="color:inherit;text-decoration:underline">Syarat & Ketentuan</a>.</div>
         <div style="display:flex;gap:8px">
           <button type="button" class="secondary" id="fillDemo">Isi demo</button>
           <button type="submit" class="btn">Daftar</button>
         </div>
       </div>
 
-      <div style="margin-top:12px;font-size:13px;color:var(--muted)">Sudah punya akun? <a href="#" style="color:inherit;text-decoration:underline">Masuk</a></div>
+      <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+        Sudah punya akun? <a href="#" style="color:inherit;text-decoration:underline">Masuk</a>
+      </div>
     </form>
   </div>
 
